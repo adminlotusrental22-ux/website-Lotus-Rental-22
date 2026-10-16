@@ -1,0 +1,6 @@
+{
+  "name": "Lotus Rental 22 - Premium Scooter Rental Labuan Bajo",
+  "description": "Explore Labuan Bajo with premium scooter rentals. Free hotel and airport delivery, zero security deposit, well-maintained bikes, 2 helmets & phone holder included.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
