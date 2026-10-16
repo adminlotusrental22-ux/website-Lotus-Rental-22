@@ -1,0 +1,14 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+.env*
+!.env.example
+
+# Local archives, original photographs and working previews
+source-photos/
+design-preview/
+*.zip
+.normalize-scooters.ps1
