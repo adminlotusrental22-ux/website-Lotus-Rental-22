@@ -1,32 +1,40 @@
-# Lotus Rental 22
-Responsive scooter catalogue for Labuan Bajo, redesigned from the supplied Google AI Studio export.
+# Lotus Rental 22 — final website
 
-## Run locally
-Requires Node.js 22.12+ (Node.js 24 recommended).
-1. Run `npm ci`.
-2. Run `npm run dev`.
-3. Open `http://localhost:3000`.
+This folder is the working source of truth. Edit this project, not an extracted upload copy.
 
-No Gemini key is required. This is a client-side catalogue; reservations open a WhatsApp draft for the visitor to send. Availability is confirmed by the rental team.
+## Main folders
+- `src/`: website, booking logic and EN / 中文 / ID translations.
+- `public/assets/`: photos and logo used by the final website. Guest photos have faces and plates blurred.
+- `tests/`: booking and translation checks.
+- `docs/`: asset records, editing prompts and QA notes.
+- `_archive/`: local-only originals, old exports, previews and unused files. Not part of the website or upload ZIP. Contains unblurred originals; keep private.
+- `dist/`: generated production build; recreated by `npm run build`.
+- `node_modules/`: installed dependencies; recreated by `npm ci`.
 
-## Checks and build
-- `npm test` runs booking, pricing, date and WhatsApp regression tests. See `QA_REPORT.md` for browser QA results.
-- `npm run build` creates the production website in `dist/`.
-- `npx tsc --noEmit` checks TypeScript.
+## Run and check
+Requires Node.js 22.12+.
 
-## Design
-- Mobile: one compact header, short destination hero, two-column catalogue.
-- Tablet: three-column catalogue. Desktop: four-column catalogue and full navigation.
-- Category filters, price sorting, rupiah pricing, on-demand scooter details.
-- Delivery details and FAQs expand when needed.
-- Mobile bottom navigation reserves its own space.
-- Booking supports multiple scooters, WITA pickup scheduling, rental duration, delivery fees, and a persistent estimated total.
-- Keyboard-accessible native dialogs, focus restoration, Escape dismissal, reduced-motion support.
+```sh
+npm ci
+npm run dev
+npm test
+npm run lint
+npm run build
+```
 
-Photos are illustrative. Exact colour and variant must be confirmed with the business. The original export called one model “PCX 155”; the catalogue displays “Honda PCX” pending confirmation of the exact variant. Rates, contact details and rental terms are retained from the supplied export. The owner-confirmed garage location is displayed with its Google Maps pin. Sample customer quotes are not published; the handover carousel is ready for genuine guest photos and testimonials.
+Default local address is http://localhost:3000. The existing preview may use port 3001.
+No API key is needed. Bookings open a WhatsApp draft; availability is confirmed by the team.
 
-See `CONTENT_AUDIT.md` for restored service details and how to add blurred guest photos. See `ASSET_SOURCES.md` for image provenance and `design-preview/` for screenshots.
+## Where to edit
+- Fleet, rates, contact, verification and FAQ: `src/data/businessData.ts`.
+- Guest carousel photos: `src/data/guestStories.ts` and `public/assets/guests/`.
+- Translations: `src/i18n/translations.ts`.
+- Main layout: `src/App.tsx`, `src/components/` and `src/index.css`.
 
+English is the default for new visitors; their language selection is remembered. Prices remain IDR and scheduling uses WITA. Product photos are illustrative; confirm exact colour/variant with the team.
 
+## Manual GitHub upload
+`lotus-github-upload.zip` is the final upload package. Extract it and upload its contents, not the ZIP file. It excludes `_archive`, original private photos, dependencies, build output and Git history. After future edits, regenerate the package so it matches this source.
 
-
+## Additional languages
+The compact header selector now includes ES (Español) and IT (Italiano), alongside EN, 中文 and ID. Spanish/Italian editorial and WhatsApp translations are maintained in src/i18n/europeanTranslations.ts. Booking dates use es-ES / it-IT. New visitors still default to English; selected language is remembered.

@@ -2,9 +2,12 @@ import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
 import App from './App.tsx';
 import './index.css';
+import { LanguageProvider, localizedComponent } from './i18n/LanguageProvider';
+const LocalizedApp = localizedComponent(App);
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
+    <LanguageProvider><LocalizedApp /></LanguageProvider>
   </StrictMode>,
 );
+

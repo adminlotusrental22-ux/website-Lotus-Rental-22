@@ -597,3 +597,34 @@ body{min-width:0;} .hero-panel{min-height:282px;} .hero-copy{padding:24px 32px;}
 .garage-media .garage-map { height: 170px; }
 .garage-grid { row-gap: 12px; }
 @media(max-width:767px) { .garage-media .garage-map { height: 170px; } }
+
+.verification-note { font-size:11px; line-height:1.8; color:#53634f; }
+.verification-note strong { color:#173e34; }
+.how-verification { margin-top:18px; }
+.footer-inner .footer-address { margin:0 0 12px; color:#dce6d6; max-width:310px; }
+.footer-address strong { font-size:11px; letter-spacing:0; }
+
+.language-picker { display:inline-flex; align-items:center; gap:4px; color:#254d40; font-size:12px; flex-shrink:0; }
+.language-picker select { background:transparent; color:inherit; font:inherit; padding:8px 2px; max-width:90px; cursor:pointer; border:0; }
+@media(max-width:767px) {
+ .header-inner { gap:6px; }
+ .header-actions { gap:6px; }
+ .language-picker { font-size:10px; gap:1px; }
+ .language-picker>span[aria-hidden] { display:none; }
+ .language-picker select { max-width:64px; padding:7px 0; }
+ .header-whatsapp { display:none; }
+ .brand-name { font-size:12px; }
+ .brand-name small { font-size:6px; letter-spacing:1px; }
+ .lotus-logo--sm img { width:36px; }
+ .desktop-book { padding-left:10px; padding-right:10px; }
+}
+html[lang='zh-CN'] { font-family:'Plus Jakarta Sans','Microsoft YaHei','PingFang SC',sans-serif; }
+html[lang='zh-CN'] .eyebrow { letter-spacing:1px; }
+@media(min-width:1100px) { .desktop-nav { gap:14px; font-size:11px; } .desktop-nav a { white-space:nowrap; } .header-actions { gap:12px; } .header-inner { gap:16px; } }
+@media(min-width:1100px) and (max-width:1279px) { .header-whatsapp span { display:none; } .brand-name { font-size:14px; } }
+
+/* Compact, language-based labels across all screen sizes. */
+.language-picker { gap:0; }
+.language-picker>span[aria-hidden] { display:none; }
+.language-picker select { width:54px; max-width:54px; font-size:11px; padding:8px 0; }
+@media(max-width:767px) { .language-picker select { width:48px; max-width:48px; font-size:10px; } }

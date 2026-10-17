@@ -1,4 +1,4 @@
-import { ScooterModel, RouteDestination, HandoverPhoto, FaqItem, Currency } from '../types';
+import { ScooterModel, RouteDestination, FaqItem, Currency } from '../types';
 
 export const BUSINESS_INFO = {
   brandName: 'LOTUS RENTAL 22',
@@ -10,7 +10,9 @@ export const BUSINESS_INFO = {
   email: 'admin.lotusrental22@gmail.com',
   instagram: '@lotusrental22',
   operatingHours: '08:00 AM – 08:00 PM WITA (Daily; after-hours upon advance WA request)',
-  address: 'Wae Mata, Labuan Bajo, Komodo, Flores',
+  address: 'Waemeta, Gorontalo, Labuan Bajo',
+  fullAddress: 'Labuan Bajo, Nusa Tenggara Timur 86754, Indonesia',
+  verificationNote: 'Verification required: a photo of your passport or national ID, return flight confirmation, and hotel booking confirmation. Our team will guide you on WhatsApp. Your original passport stays with you.',
   googleMapsUrl: 'https://www.google.com/maps/place/LOTUS+RENTAL+22/@-8.5033088,119.888358,17z/data=!4m6!3m5!1s0x2db465d4a32d6e37:0x1d351897f32fce90!8m2!3d-8.5035334!4d119.8878866!16s%2Fg%2F11vkh6dxvk?entry=tts',
   deliveryFeeNote: 'Standard delivery fee: Rp 20.000 per scooter unit for Komodo Airport (LBJ) & Hotel/Resort delivery.',
 };
@@ -215,86 +217,6 @@ export const LABUAN_BAJO_ROUTES: RouteDestination[] = [
   },
 ];
 
-export const HANDOVER_GALLERY: HandoverPhoto[] = [
-  {
-    id: 'delivery-1',
-    customerName: 'Marcus & Elena',
-    country: 'Germany 🇩🇪',
-    location: 'Komodo Airport (LBJ) Handover',
-    scooterRented: 'Yamaha NMAX 155',
-    rating: 5,
-    comment: 'Lotus staff met us right outside arrivals at LBJ airport with two clean helmets and a full tank. No deposit stress at all. The NMAX made our Golo Mori ride unforgettable!',
-    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80',
-    date: 'September 2026',
-  },
-  {
-    id: 'delivery-2',
-    customerName: 'Chloe Dupont',
-    country: 'France 🇫🇷',
-    location: 'Ayana Resort Delivery',
-    scooterRented: 'Honda Scoopy 110',
-    rating: 5,
-    comment: 'Super fast WhatsApp response! Delivered the cute Scoopy directly to our resort lobby within 20 minutes. Bike ran smoothly up all the steep slopes.',
-    imageUrl: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=800&q=80',
-    date: 'August 2026',
-  },
-  {
-    id: 'delivery-3',
-    customerName: 'Liam & Sarah',
-    country: 'Australia 🇦🇺',
-    location: 'Labuan Bajo Town Center',
-    scooterRented: 'Honda Vario 160',
-    rating: 5,
-    comment: 'The Vario 160 had serious power for double riding with our backpacks. Sturdy phone holder made navigation super easy. 10/10 service!',
-    imageUrl: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=800&q=80',
-    date: 'August 2026',
-  },
-  {
-    id: 'delivery-4',
-    customerName: 'Kenji Takahashi',
-    country: 'Japan 🇯🇵',
-    location: 'Meruorah Hotel Delivery',
-    scooterRented: 'Honda PCX 155',
-    rating: 5,
-    comment: 'Extremely polite local staff. The bike was spotless and mechanically perfect. Zero hassles, zero hidden fees.',
-    imageUrl: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-    date: 'July 2026',
-  },
-  {
-    id: 'delivery-5',
-    customerName: 'Sophie & Tom',
-    country: 'United Kingdom 🇬🇧',
-    location: 'Komodo Airport (LBJ)',
-    scooterRented: 'Yamaha Aerox',
-    rating: 5,
-    comment: 'Rented 2 Aerox scooters for our group. Handover was seamless, bikes were pristine, and riding around Labuan Bajo was the highlight of our trip!',
-    imageUrl: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
-    date: 'July 2026',
-  },
-  {
-    id: 'delivery-6',
-    customerName: 'David Miller',
-    country: 'United States 🇺🇸',
-    location: 'Sudamala Resort Delivery',
-    scooterRented: 'Honda Beat 110',
-    rating: 5,
-    comment: 'Super light bike and so easy to park anywhere in town. Explored Rangko cave pool with total ease. Lotus Rental 22 is the real deal.',
-    imageUrl: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
-    date: 'June 2026',
-  },
-  {
-    id: 'delivery-7',
-    customerName: 'Isabella Rossi',
-    country: 'Italy 🇮🇹',
-    location: 'Labuan Bajo Port',
-    scooterRented: 'Honda Stylo 160',
-    rating: 5,
-    comment: 'Loved the Stylo 160! Stylish, smooth, and perfect for sunset rides at Bukit Cinta. Great communication on WhatsApp.',
-    imageUrl: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=800&q=80',
-    date: 'June 2026',
-  },
-];
-
 export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-payment',
@@ -311,7 +233,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-1',
     question: 'What documents are required to rent a scooter in Labuan Bajo?',
-    answer: 'We keep the verification process fast and simple! You only need: 1) Passport or National ID, 2) Flight return ticket confirmation, and 3) Hotel/resort booking confirmation in Labuan Bajo. No cash deposit is required.',
+    answer: 'Before handover, we verify a photo of your passport or national ID, your return flight confirmation, and your hotel/resort booking confirmation in Labuan Bajo. Our team will guide you on WhatsApp. Your original passport stays with you, and no security deposit is required.',
     category: 'booking',
   },
   {
@@ -345,6 +267,8 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'riding',
   },
 ];
+
+
 
 
 

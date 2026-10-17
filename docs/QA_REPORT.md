@@ -83,3 +83,15 @@ Expanded map height to 320px desktop / 300px mobile. Added accessible bounded +/
 
 ## Compact map correction
 Owner requested flatter map and closer default framing. Map height now 170px on desktop/mobile, default zoom 15, row gap 12px. Custom zoom buttons and airport directions retained. TypeScript and production build passed.
+
+## Verification and address update
+Added explicit photo-of-passport/ID, return flight and hotel booking verification statement to booking form, how-it-works and FAQ. Original passport remains with guest. Footer address now supplied Waemeta/Gorontalo address with postal code. TypeScript/build pass. GitHub push cancelled at owner request; manual upload archive provided separately without original private photos.
+
+## Language selector QA
+English / Bahasa Indonesia / Simplified Chinese header selector installed, persisted locally with English default. Editorial text, FAQ/verification, model descriptions, booking form/errors/dates, accessible labels and WhatsApp drafts localized. Prices stay IDR; WITA and proper names retained. 23 tests pass (16 booking, 7 localization); TypeScript and production build pass. Browser verified Chinese/Indonesian pages and booking dialogs, translated WA href, Chinese preference after reload, compact 320px+ mobile and desktop layout with no horizontal overflow. Language choice commits immediately; form/filter components keep stable identities. Manual upload ZIP refreshed.
+
+## Final workspace cleanup
+Legacy unused components and catalogue PNGs moved into local-only _archive. Original photos, old extracted upload copy, old redesign ZIP, processing script and design previews archived. Asset/process/QA records consolidated under docs. Removed unused sample testimonial dataset. Active source, final public assets, tests and configuration retained. 23 tests, TypeScript, production build and local asset-reference check pass. README documents the final structure. Upload ZIP regenerated without archive/private originals.
+
+## Spanish / Italian update — 17 October 2026
+Added ES and IT to compact selector, persisted language parsing, all existing editorial/accessibility translation keys, FAQ, scooter descriptions, direct/full-order WhatsApp drafts and localized booking date formats. English remains default. Automated checks include full dictionary coverage and order-value preservation. Browser visual verification could not complete because the in-app browser failed to load the local preview; HTTP loopback returned 200. No claim of new visual QA. Upload ZIP regenerated, including favicon assets.

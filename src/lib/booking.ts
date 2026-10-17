@@ -1,3 +1,4 @@
+import { getLanguage, translateMessage } from '../i18n/language';
 import { BUSINESS_INFO, SCOOTER_FLEET } from '../data/businessData';
 
 export function resolveScooterId(value: unknown): string | null {
@@ -60,6 +61,7 @@ export function buildBookingWhatsAppUrl(order: {
     'Payment at handover: Cash or QRIS. No security deposit. My passport stays with me.', '',
     'Please confirm availability, exact model and final total. Thank you!',
   ].join('\n');
-  return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
+  return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(translateMessage(message,getLanguage()))}`;
 }
+
 
