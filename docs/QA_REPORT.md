@@ -95,3 +95,6 @@ Legacy unused components and catalogue PNGs moved into local-only _archive. Orig
 
 ## Spanish / Italian update — 17 October 2026
 Added ES and IT to compact selector, persisted language parsing, all existing editorial/accessibility translation keys, FAQ, scooter descriptions, direct/full-order WhatsApp drafts and localized booking date formats. English remains default. Automated checks include full dictionary coverage and order-value preservation. Browser visual verification could not complete because the in-app browser failed to load the local preview; HTTP loopback returned 200. No claim of new visual QA. Upload ZIP regenerated, including favicon assets.
+
+## Flag language picker — 17 October 2026
+Replaced compact language codes with local SVG flag artwork (UK/China/Indonesia/Spain/Italy). Selected flag is independent of Windows emoji rendering. Native select keeps readable language names, keyboard support and accessible label. Browser confirmed flag loads, Italian language switch and no horizontal overflow; restored English. 31 tests, TypeScript and build pass. Proof: docs/previews/header-flags.jpg.

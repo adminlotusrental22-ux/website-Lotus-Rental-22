@@ -628,3 +628,9 @@ html[lang='zh-CN'] .eyebrow { letter-spacing:1px; }
 .language-picker>span[aria-hidden] { display:none; }
 .language-picker select { width:54px; max-width:54px; font-size:11px; padding:8px 0; }
 @media(max-width:767px) { .language-picker select { width:48px; max-width:48px; font-size:10px; } }
+
+.language-picker--flags { position:relative; width:44px; height:40px; flex-shrink:0; }
+.language-picker--flags .language-flag { display:block; position:absolute; left:1px; top:12px; width:24px; height:16px; object-fit:cover; box-shadow:0 0 0 1px #183c3420; border-radius:2px; pointer-events:none; }
+.language-picker--flags select { position:absolute; inset:0; width:44px; max-width:44px; height:40px; margin:0; padding:0; opacity:1; color:transparent; appearance:none; background:transparent; cursor:pointer; }
+.language-picker--flags select option { color:#173e34; background:#fff; font-size:13px; }
+.language-picker--flags .language-chevron { display:block; position:absolute; right:0; top:10px; font-size:14px; pointer-events:none; }

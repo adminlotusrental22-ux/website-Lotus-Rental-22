@@ -8,7 +8,21 @@ export function LanguageProvider({children}:{children:React.ReactNode}) {
 }
 export function LanguageSwitcher(){
   const {language,setLanguage}=useContext(LanguageContext);
-  return <label className="language-picker"><span aria-hidden="true">◎</span><span className="sr-only">Language</span><select aria-label="Language" value={language} onChange={e=>setLanguage(e.target.value as Language)}><option value="en" lang="en">EN</option><option value="zh" lang="zh-CN">中文</option><option value="id" lang="id">ID</option><option value="es" lang="es" title="Español">ES</option><option value="it" lang="it" title="Italiano">IT</option></select></label>;
+  const choices = [
+    {id:'en',flag:'gb',label:'English',emoji:'🇬🇧'},
+    {id:'zh',flag:'cn',label:'中文',emoji:'🇨🇳'},
+    {id:'id',flag:'id',label:'Indonesia',emoji:'🇮🇩'},
+    {id:'es',flag:'es',label:'Español',emoji:'🇪🇸'},
+    {id:'it',flag:'it',label:'Italiano',emoji:'🇮🇹'},
+  ];
+  const selected=choices.find(choice=>choice.id===language)!;
+  return <label className="language-picker language-picker--flags" title={selected.label}>
+    <img className="language-flag" src={`/assets/flags/${selected.flag}.svg`} alt="" aria-hidden="true" width="24" height="16"/>
+    <span className="sr-only">Language</span>
+    <select aria-label="Language" value={language} onChange={e=>setLanguage(e.target.value as Language)}>
+      {choices.map(choice=><option key={choice.id} value={choice.id} lang={choice.id==='zh'?'zh-CN':choice.id}>{choice.emoji} {choice.label}</option>)}
+    </select><span className="language-chevron" aria-hidden="true">⌄</span>
+  </label>;
 }
 // Translate React's render output, never mutate the DOM. Stable wrappers preserve
 // component identity, hooks and in-progress form state when language changes.
@@ -34,6 +48,7 @@ function localize(node:React.ReactNode,language:Language):React.ReactNode {
   if(props.children!==undefined)props.children=localize(props.children,language);
   return React.cloneElement(node,props);
 }
+
 
 
 
