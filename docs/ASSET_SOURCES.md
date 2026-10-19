@@ -27,3 +27,8 @@ Owner garage image retouched with built-in imagegen. Natural exposure cleanup, p
 
 ## Guest photographs
 Seven owner-supplied handover photos, naturally enhanced using built-in imagegen with faces/vehicle plates blurred and overlay text removed. Website delivery: public/assets/guests/guest-1.jpg through guest-7.jpg. See GUEST_PHOTOS.md.
+
+## Social highlights — 19 October 2026
+Compact six-card row directly below the guest photo carousel. 145px-high mobile cards scroll horizontally; desktop covers capped at 190px. Links open the exact six owner-selected original posts in new tabs. No embeds, social SDKs, video elements or autoplay; five local 400px-max JPEG covers total 125,094 bytes, lazy-loaded. Sixth TikTok (7695616389188455687) returned unavailable thumbnail metadata after timeout/503 and empty metadata; deliberate branded fallback retains its original URL, without substituting unrelated imagery. Links can require platform login/availability. No OAuth/account access or automatic-feed sync is implied.
+
+Profile URLs: https://www.instagram.com/lotus_rental22/ and https://www.tiktok.com/@rental_motorbajo. Instagram footer link corrected. Edit profiles/posts in src/data/socialMedia.ts. Covers sourced from the public Instagram embed page cover and TikTok oEmbed thumbnail for the selected posts, then locally resized/compressed. Original tracking query parameters omitted from post links. Firecrawl could not retrieve these domains; public embed/oEmbed metadata used instead. No third-party resources requested by this section before a visitor follows a link.

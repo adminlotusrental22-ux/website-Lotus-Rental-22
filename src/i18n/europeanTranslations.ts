@@ -258,3 +258,9 @@ export function translateEuropean(text:string,language:'es'|'it'):string {
  if(small[key])return text.replace(key,small[key][index]);
  return text.replace(/\/day/g,es?'/día':'/giorno');
 }
+Object.assign(europeanTranslations, {
+ 'A little more of Bajo.':['Un poco más de Bajo.','Ancora un po’ di Bajo.'],
+ 'Social videos':['Vídeos en redes sociales','Video sui social'],
+ 'Watch on Instagram':['Ver en Instagram','Guarda su Instagram'],
+ 'Watch on TikTok':['Ver en TikTok','Guarda su TikTok'],
+} satisfies Record<string,[string,string]>);

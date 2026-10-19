@@ -98,3 +98,6 @@ Added ES and IT to compact selector, persisted language parsing, all existing ed
 
 ## Flag language picker — 17 October 2026
 Replaced compact language codes with local SVG flag artwork (UK/China/Indonesia/Spain/Italy). Selected flag is independent of Windows emoji rendering. Native select keeps readable language names, keyboard support and accessible label. Browser confirmed flag loads, Italian language switch and no horizontal overflow; restored English. 31 tests, TypeScript and build pass. Proof: docs/previews/header-flags.jpg.
+
+## Social section QA — 19 October 2026
+31 existing tests, TypeScript and production build pass. Browser verified 6 exact supplied post URLs, 5 successful local image loads, no social iframe, and 145px-high horizontally scrollable cards at 390px with no page overflow. Desktop and mobile visually inspected. Section sits after #trust and before FAQ. All editorial strings included in 5 languages. Screenshots: docs/previews/social-desktop.jpg and social-mobile.jpg. Last TikTok cover unavailable; explicit platform fallback is intentional. No claim that all six externally hosted videos are playable.

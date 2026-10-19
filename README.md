@@ -38,3 +38,6 @@ English is the default for new visitors; their language selection is remembered.
 
 ## Additional languages
 The compact header selector now includes ES (Español) and IT (Italiano), alongside EN, 中文 and ID. Spanish/Italian editorial and WhatsApp translations are maintained in src/i18n/europeanTranslations.ts. Booking dates use es-ES / it-IT. New visitors still default to English; selected language is remembered.
+
+## Social previews
+Small post covers below the guest gallery link to the owner-selected Instagram/TikTok posts. They are static, lazy-loaded local images: no autoplay, embeds, external scripts, passwords or live feed integration. Maintain links and covers in src/data/socialMedia.ts and public/assets/social/. One unavailable TikTok cover uses a platform fallback; replace its null cover when a verified cover becomes available.

@@ -61,3 +61,9 @@ Object.assign(translations, {
 'Two guests with a scooter, faces and plates blurred':['Dua tamu dengan motor, wajah dan plat diblur','两位客人与摩托车，面部及车牌已模糊处理'],
 'Couple with their rental scooter, faces and plates blurred':['Pasangan dengan motor sewa, wajah dan plat diblur','一对客人与租赁摩托车，面部及车牌已模糊处理'],
 } satisfies Record<string,[string,string]>);
+Object.assign(translations, {
+ 'A little more of Bajo.':['Cerita lain dari Bajo.','更多巴霍瞬间。'],
+ 'Social videos':['Video media sosial','社交视频'],
+ 'Watch on Instagram':['Tonton di Instagram','在 Instagram 观看'],
+ 'Watch on TikTok':['Tonton di TikTok','在 TikTok 观看'],
+} satisfies Record<string,[string,string]>);

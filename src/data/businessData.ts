@@ -8,7 +8,7 @@ export const BUSINESS_INFO = {
   phoneFormatted: '+6282226392207',
   whatsappNumber: '6282226392207',
   email: 'admin.lotusrental22@gmail.com',
-  instagram: '@lotusrental22',
+  instagram: '@lotus_rental22',
   operatingHours: '08:00 AM – 08:00 PM WITA (Daily; after-hours upon advance WA request)',
   address: 'Waemeta, Gorontalo, Labuan Bajo',
   fullAddress: 'Labuan Bajo, Nusa Tenggara Timur 86754, Indonesia',
@@ -267,6 +267,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: 'riding',
   },
 ];
+
 
 
 
