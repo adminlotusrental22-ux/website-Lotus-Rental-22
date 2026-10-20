@@ -33,7 +33,10 @@ test('invalid rental input cannot produce a misleading total', () => {
 });
 test('WITA schedule has one hour lead time and rolls after closing', () => {
   assert.deepEqual(getBookingSchedule(new Date('2026-10-16T06:00:00+08:00')),{date:'2026-10-16',earliestHour:8,minDate:'2026-10-16',time:'08:00'});
-  assert.equal(getBookingSchedule(new Date('2026-10-16T18:45:00+08:00')).time,'20:00');
+  assert.equal(getBookingSchedule(new Date('2026-10-16T18:45:00+08:00')).time,'08:00');
+  assert.equal(getBookingSchedule(new Date('2026-10-16T18:45:00+08:00')).minDate,'2026-10-17');
+  assert.equal(isPickupTimeValid('2026-10-17','20:00',0),false);
+  assert.equal(isPickupTimeValid('2026-10-17','19:00',0),true);
   assert.equal(getBookingSchedule(new Date('2026-10-16T19:45:00+08:00')).minDate,'2026-10-17');
   assert.equal(getBookingSchedule(new Date('2026-10-16T19:45:00+08:00')).time,'08:00');
   assert.equal(getBookingSchedule(new Date('2026-12-31T23:45:00+08:00')).minDate,'2027-01-01');

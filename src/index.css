@@ -661,3 +661,15 @@ html[lang='zh-CN'] .eyebrow { letter-spacing:1px; }
  .social-platform { font-size:9px; bottom:8px; left:8px; right:8px; }
 }
 @media(prefers-reduced-motion:reduce){.social-preview img{transition:none;}}
+.rental-policies {scroll-margin-top:100px;max-width:1100px;}
+.rental-policies h2 {font-size:clamp(24px,3vw,32px);margin-bottom:14px;}
+.policy-summary,.booking-policy-note {font-size:13px;line-height:1.75;color:#52645d;}
+.rental-policies details {border-bottom:1px solid #dce4dd;scroll-margin-top:110px;}
+.rental-policies summary {cursor:pointer;display:flex;justify-content:space-between;gap:20px;padding:18px 0;font-weight:600;list-style:none;}
+.rental-policies details p,.rental-policies li {font-size:14px;line-height:1.8;color:#52645d;margin-bottom:14px;overflow-wrap:anywhere;}
+.rental-policies ol {padding-left:23px;}
+.rental-policies .policy-list {list-style:disc;padding-left:20px;margin:0 0 20px;}
+.rental-policies .policy-list li {display:list-item;margin-bottom:9px;padding-left:4px;line-height:1.65;}
+.rental-policies a,.booking-policy-note a {color:#174c43;text-decoration:underline;text-underline-offset:3px;}
+.policy-footer-links {display:flex;gap:24px;flex-wrap:wrap;padding-top:22px;font-size:13px;}
+.booking-policy-note {background:#f2f5ee;border-radius:10px;padding:12px;}

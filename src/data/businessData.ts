@@ -9,10 +9,10 @@ export const BUSINESS_INFO = {
   whatsappNumber: '6282226392207',
   email: 'admin.lotusrental22@gmail.com',
   instagram: '@lotus_rental22',
-  operatingHours: '08:00 AM – 08:00 PM WITA (Daily; after-hours upon advance WA request)',
+  operatingHours: '08:00 AM – 07:00 PM WITA (Daily; after-hours upon advance WA request)',
   address: 'Waemeta, Gorontalo, Labuan Bajo',
   fullAddress: 'Labuan Bajo, Nusa Tenggara Timur 86754, Indonesia',
-  verificationNote: 'Verification required: a photo of your passport or national ID, return flight confirmation, and hotel booking confirmation. Our team will guide you on WhatsApp. Your original passport stays with you.',
+  verificationNote: 'At our in-person meeting, we photograph your passport or national ID and document the scooter handover for verification. Flight tickets and hotel booking confirmation may also be required. Your original passport stays with you.',
   googleMapsUrl: 'https://www.google.com/maps/place/LOTUS+RENTAL+22/@-8.5033088,119.888358,17z/data=!4m6!3m5!1s0x2db465d4a32d6e37:0x1d351897f32fce90!8m2!3d-8.5035334!4d119.8878866!16s%2Fg%2F11vkh6dxvk?entry=tts',
   deliveryFeeNote: 'Standard delivery fee: Rp 20.000 per scooter unit for Komodo Airport (LBJ) & Hotel/Resort delivery.',
 };
@@ -227,13 +227,13 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-garage',
     question: 'Can I pick up at the Lotus Rental 22 garage?',
-    answer: 'Yes. Visit our garage in Wae Mata, Labuan Bajo. Use the Google Maps link in the garage section for the exact location. We are open daily from 08:00 to 20:00 WITA, with free luggage storage during your rental and complimentary helmet fitting. Arrange after-hours pickup with us on WhatsApp in advance.',
+    answer: 'Yes. Visit our garage in Wae Mata, Labuan Bajo. Use the Google Maps link in the garage section for the exact location. We are open daily from 08:00 to 19:00 WITA, with free luggage storage during your rental and complimentary helmet fitting. Arrange after-hours pickup with us on WhatsApp in advance.',
     category: 'delivery',
   },
   {
     id: 'faq-1',
     question: 'What documents are required to rent a scooter in Labuan Bajo?',
-    answer: 'Before handover, we verify a photo of your passport or national ID, your return flight confirmation, and your hotel/resort booking confirmation in Labuan Bajo. Our team will guide you on WhatsApp. Your original passport stays with you, and no security deposit is required.',
+    answer: 'At our in-person meeting, we photograph your passport or national ID and document the scooter handover for verification. Flight tickets and hotel booking confirmation may also be required. Your original passport stays with you. No security deposit is required.',
     category: 'booking',
   },
   {
@@ -251,7 +251,7 @@ export const FAQ_ITEMS: FaqItem[] = [
   {
     id: 'faq-4',
     question: 'What happens if I encounter a flat tire or mechanical issue?',
-    answer: 'We provide local roadside support in Labuan Bajo during standard operating hours (08:00 AM – 08:00 PM WITA). If you ever experience a flat tire or technical issue, simply send us a message on WhatsApp (+62 822-2639-2207) and our team will dispatch assistance or swap your scooter right away.',
+    answer: 'We provide local roadside support in Labuan Bajo during standard operating hours (08:00 AM – 07:00 PM WITA). If you ever experience a flat tire or technical issue, simply send us a message on WhatsApp (+62 822-2639-2207) and our team will dispatch assistance or swap your scooter right away.',
     category: 'riding',
   },
   {

@@ -6,6 +6,10 @@ export function getLanguage(): Language {
 }
 export function translate(text:string, language:Language):string {
   if(language==='en')return text;
+  const verification='At our in-person meeting, we photograph your passport or national ID and document the scooter handover for verification. Flight tickets and hotel booking confirmation may also be required. Your original passport stays with you.';
+  const verificationTranslations={id:'Saat bertemu langsung, kami memfoto paspor atau KTP dan mendokumentasikan serah terima motor untuk verifikasi. Tiket penerbangan dan konfirmasi hotel mungkin diperlukan. Paspor asli tetap Anda pegang.',zh:'当面交车时，我们拍摄护照或身份证及车辆交接记录用于核验。必要时可能要求机票和酒店预订确认。护照原件由您保管。',es:'Al reunirnos fotografiamos tu pasaporte o documento de identidad y documentamos la entrega para la verificación. Podemos solicitar billetes de avión y reserva de hotel. Conservas tu pasaporte original.',it:'All’incontro fotografiamo passaporto o documento d’identità e documentiamo la consegna per la verifica. Potrebbero servire biglietti aerei e prenotazione dell’hotel. Il passaporto originale resta a te.'};
+  if(text.trim()===verification)return text.replace(verification,verificationTranslations[language]);
+  if(text.trim()===verification+' No security deposit is required.')return verificationTranslations[language]+({id:' Tidak ada deposit.',zh:' 无需押金。',es:' No se requiere depósito.',it:' Non è richiesto un deposito.'})[language];
   if(language==='es'||language==='it')return translateEuropean(text,language);
   const trimmed=text.trim();
   if(!trimmed)return text;

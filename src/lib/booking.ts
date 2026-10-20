@@ -20,14 +20,14 @@ export function getBookingSchedule(now = new Date()) {
   const earliestHour = Math.max(8, hour + (Number(part('minute')) || Number(part('second')) ? 2 : 1));
   return {
     date, earliestHour,
-    minDate: earliestHour > 20 ? nextDay(date, 1) : date,
-    time: String(earliestHour > 20 ? 8 : earliestHour).padStart(2, '0') + ':00',
+    minDate: earliestHour > 19 ? nextDay(date, 1) : date,
+    time: String(earliestHour > 19 ? 8 : earliestHour).padStart(2, '0') + ':00',
   };
 }
 export function isPickupTimeValid(date: string, time: string, now = Date.now()) {
   const hour = Number(time.slice(0, 2));
   const timestamp = new Date(date + 'T' + time + ':00+08:00').getTime();
-  return hour >= 8 && hour <= 20 && Number.isFinite(timestamp) && timestamp >= now + 3600000;
+  return hour >= 8 && hour <= 19 && Number.isFinite(timestamp) && timestamp >= now + 3600000;
 }
 export function calculateBookingTotals(ids: string[], days: number, location: string) {
   if (!ids.length || !Number.isInteger(days) || days < 1) throw new Error('Invalid rental selection');

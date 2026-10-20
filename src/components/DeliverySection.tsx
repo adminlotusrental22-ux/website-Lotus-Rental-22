@@ -1,7 +1,7 @@
 import React from 'react';
 import { Plane, Hotel, Store, ChevronDown, Clock } from 'lucide-react';
 export const DeliverySection = () => <section id="delivery" className="page-width content-section delivery-section">
-  <div className="section-heading"><div><span className="eyebrow">MEET. GRAB THE KEYS. GO.</span><h2>Your ride, where you need it.</h2></div><span className="muted delivery-hours"><Clock size={14}/> 08:00–20:00 WITA</span></div>
+  <div className="section-heading"><div><span className="eyebrow">MEET. GRAB THE KEYS. GO.</span><h2>Your ride, where you need it.</h2></div><span className="muted delivery-hours"><Clock size={14}/> 08:00–19:00 WITA</span></div>
   <div className="delivery-grid">{[
     {Icon:Plane,title:'Komodo Airport',sub:'Meet at the arrival exit',fee:'Rp 20k / scooter',detail:'Share your flight number and arrival time when booking. Our team will arrange the handover at the arrival exit with your scooter, two helmets, and phone mount.'},
     {Icon:Hotel,title:'Hotel or villa',sub:'Delivered to your doorstep',fee:'Rp 20k / scooter',detail:'Tell us your hotel or villa name and address. Confirm the delivery time and coverage with our team on WhatsApp before your trip.'},
