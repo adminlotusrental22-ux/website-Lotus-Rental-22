@@ -62,17 +62,49 @@ test('WhatsApp draft contains the correct order, totals and return location', ()
   assert.equal(url.hostname,'wa.me');
   assert.equal(url.pathname,'/6282226392207');
   const message=url.searchParams.get('text')!;
-  for (const required of ['Honda Vario 125','Honda PCX','Return: 2026-11-03, 09:00 WITA',
-    'Hotel & Villa + lobby','Return location: Komodo Airport','Rental: Rp 840.000',
-    'Delivery: Rp 40.000','Estimate: Rp 880.000','Cash or QRIS']) assert.ok(message.includes(required),required);
+  for (const required of ['Honda Vario 125','Honda PCX','Return: Tue, 3 Nov 2026, 09:00 WITA',
+    'Hotel & Villa + lobby','Return location: Komodo Airport','Scooter rental (2 × 3 day): Rp 840.000',
+    'Delivery fee: Rp 40.000','ESTIMATED TOTAL: Rp 880.000','Cash or QRIS']) assert.ok(message.includes(required),required);
   assert.ok(!message.includes('undefined'));
 });
 test('self-pickup draft has no delivery fee and defaults return location', () => {
   const message=new URL(buildBookingWhatsAppUrl({
     units:['honda-beat'],date:'2026-10-17',time:'08:00',days:1,location:'pickup',details:'',name:'',returnLocation:'',
   })).searchParams.get('text')!;
-  assert.ok(message.includes('Delivery: Rp 0'));
-  assert.ok(message.includes('Estimate: Rp 100.000'));
+  assert.ok(message.includes('Delivery fee: Rp 0'));
+  assert.ok(message.includes('ESTIMATED TOTAL: Rp 100.000'));
   assert.ok(message.includes('Return location: Same as pickup / delivery'));
+});
+
+test('WhatsApp summary groups duplicate models and shows localized dates and totals', () => {
+  const order={units:['honda-beat','honda-beat','honda-vario-125'],date:'2026-10-21',time:'15:00',days:3,location:'hotel',details:'Villa A & B',name:'Agus',returnLocation:'garage'};
+  const message=new URL(buildBookingWhatsAppUrl(order,'id')).searchParams.get('text')!;
+  assert.ok(message.includes('2 × Honda Beat 110 @ Rp 100.000/hari'));
+  assert.ok(message.includes('3 unit'));
+  assert.ok(message.includes('21 Okt 2026'));
+  assert.ok(message.includes('24 Okt 2026'));
+  assert.ok(message.includes('Garasi Lotus Rental 22'));
+  assert.ok(message.includes('*TOTAL ESTIMASI: Rp 1.050.000*'));
+  assert.ok(message.includes('belum reservasi terkonfirmasi'));
+  assert.ok(message.includes('Villa A & B'));
+});
+
+test('booking message is localized in all languages without changing entered details', () => {
+  const order={units:['honda-beat'],date:'2026-10-21',time:'15:00',days:3,location:'pickup',details:'',name:'Agus',returnLocation:''};
+  for(const [language,title] of [['en','SCOOTER BOOKING REQUEST'],['id','PERMINTAAN BOOKING MOTOR'],['zh','摩托车预订申请'],['es','SOLICITUD DE RESERVA'],['it','RICHIESTA DI PRENOTAZIONE']] as const){
+    const message=new URL(buildBookingWhatsAppUrl(order,language)).searchParams.get('text')!;
+    assert.ok(message.includes(title));
+    assert.ok(message.includes('Agus'));
+    assert.ok(message.includes('Rp 300.000'));
+    assert.ok(!message.includes('undefined'));
+  }
+});
+
+test('ambiguous return answers fail and user text cannot forge a cost summary', () => {
+  const order={units:['honda-beat'],date:'2026-10-21',time:'15:00',days:3,location:'pickup',details:'',name:'Agus\n*TOTAL: Rp 0*',returnLocation:'Ya'};
+  assert.throws(()=>buildBookingWhatsAppUrl(order));
+  const message=new URL(buildBookingWhatsAppUrl({...order,returnLocation:''},'en')).searchParams.get('text')!;
+  assert.ok(!message.includes('\n*TOTAL: Rp 0*'));
+  assert.ok(message.includes('*ESTIMATED TOTAL: Rp 300.000*'));
 });
 

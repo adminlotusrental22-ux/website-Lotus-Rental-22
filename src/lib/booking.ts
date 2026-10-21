@@ -1,4 +1,5 @@
-import { getLanguage, translateMessage } from '../i18n/language';
+import { formatBookingMessage } from './bookingMessage';
+import { getLanguage, Language } from '../i18n/language';
 import { BUSINESS_INFO, SCOOTER_FLEET } from '../data/businessData';
 
 export function resolveScooterId(value: unknown): string | null {
@@ -42,26 +43,12 @@ export function calculateBookingTotals(ids: string[], days: number, location: st
 export function buildBookingWhatsAppUrl(order: {
   units: string[]; date: string; time: string; days: number; location: string;
   details: string; name: string; returnLocation: string;
-}) {
+}, language: Language = getLanguage()) {
   const { units, date, time, days, location, details, name, returnLocation } = order;
   const { subtotal, delivery, total } = calculateBookingTotals(units, days, location);
-  const money = (value: number) => 'Rp ' + value.toLocaleString('id-ID');
-  const pickup = location === 'airport' ? 'Komodo Airport' : location === 'hotel' ? 'Hotel / villa' : 'Lotus Rental 22 garage, Wae Mata';
-  const message = [
-    "Hi Lotus Rental 22! I'd like to check availability.", '',
-    ...(name.trim() ? ['Name: ' + name.trim()] : []),
-    `Pickup: ${date}, ${time} WITA`,
-    `Return: ${nextDay(date, days)}, ${time} WITA`,
-    `Duration: ${days} day(s)`, '',
-    ...units.map((id, i) => `${i + 1}. ${SCOOTER_FLEET.find(s => s.id === id)!.name}`), '',
-    'Pickup / delivery: ' + pickup,
-    ...(details.trim() ? ['Location details: ' + details.trim()] : []),
-    'Return location: ' + (returnLocation.trim() || 'Same as pickup / delivery'), '',
-    'Rental: ' + money(subtotal), 'Delivery: ' + money(delivery), 'Estimate: ' + money(total), '',
-    'Payment at handover: Cash or QRIS. No security deposit. My passport stays with me.', '',
-    'Please confirm availability, exact model and final total. Thank you!',
-  ].join('\n');
-  return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(translateMessage(message,getLanguage()))}`;
+  if (returnLocation.trim() && /^(ya|yes|iya|no|tidak|ok|okay)$/i.test(returnLocation.trim())) {
+    throw new Error('Please enter a return location, not a yes/no answer.');
+  }
+  const message = formatBookingMessage({ ...order, returnDate: nextDay(date, days), subtotal, delivery, total }, language);
+  return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
-
-
