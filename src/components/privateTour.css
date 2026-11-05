@@ -37,3 +37,9 @@
 @media(max-width:650px){.tour-stop-trigger{gap:12px}.tour-stop-dialog{margin:auto 0 0;width:100%;max-width:none;max-height:90dvh;border-radius:22px 22px 0 0;animation:tour-sheet-in .28s cubic-bezier(.2,.8,.2,1) both}.tour-stop-dialog .dialog-header{padding:20px;position:sticky;top:0;background:#fff;z-index:1}.tour-stop-dialog .dialog-header h2{font-size:22px}.tour-popup-body.has-photo{grid-template-columns:1fr}.tour-popup-body>img{height:auto;aspect-ratio:16/10;min-height:0;max-height:240px}.tour-popup-copy{padding:22px 22px max(26px,env(safe-area-inset-bottom))}.tour-popup-copy p{font-size:16px}.tour-stop-dialog.is-closing{animation:tour-sheet-out .18s ease-in both}}
 @keyframes tour-sheet-in{from{opacity:0;transform:translateY(70px)}to{opacity:1;transform:translateY(0)}}@keyframes tour-sheet-out{to{opacity:0;transform:translateY(70px)}}
 @media(prefers-reduced-motion:reduce){.tour-stop-dialog,.tour-stop-dialog::backdrop,.tour-stop-dialog.is-closing,.tour-stop-dialog.is-closing::backdrop{animation:none}.tour-stop-trigger{transition:none}}
+/* Explicit viewport placement overrides the global dialog margin reset. */
+.dialog.tour-stop-dialog{position:fixed;inset:0;margin:auto;width:min(820px,calc(100vw - 40px));height:fit-content;max-height:85dvh;}
+.dialog.tour-stop-dialog .dialog-inner{max-height:85dvh;overflow:auto;}
+.dialog.tour-stop-dialog .dialog-header{flex-shrink:0;}
+@media(max-width:650px){.dialog.tour-stop-dialog{inset:auto 0 0;margin:0;width:100%;max-width:100%;height:fit-content;max-height:90dvh;}.dialog.tour-stop-dialog .dialog-inner{max-height:90dvh;}}
+.tour-popup-disclaimer{font-size:11px;color:#7b887a;line-height:1.6}

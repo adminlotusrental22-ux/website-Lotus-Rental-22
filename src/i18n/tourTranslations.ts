@@ -144,3 +144,5 @@ export function tourMessage(text:string,language:string){
    return value;
  }).join('\n');
 }
+
+tourTranslations['Sunset atmosphere reference · venue access is not included.']=['Referensi suasana sunset · akses venue tidak termasuk.','日落氛围参考，场地入场不包含。','Referencia del ambiente al atardecer; acceso al lugar no incluido.','Immagine di atmosfera al tramonto; accesso al luogo non incluso.'];
