@@ -61,3 +61,5 @@
 .tour-car .tour-interior img{display:block;width:100%;height:210px;max-height:none;object-fit:cover;object-position:center 64%;border-radius:0;background:transparent;}
 .tour-car .tour-interior figcaption{margin-top:6px;font-size:10px;}
 @media(max-width:650px){.tour-content .tour-car{padding:0!important;}.tour-car h2{font-size:22px;}.tour-car .tour-interior img{height:175px;max-height:none;}.tour-car .tour-interior{margin-top:12px;}}
+.tour-car .tour-interior img{border-radius:14px;}
+@media(max-width:650px){.tour-car .tour-interior img{border-radius:12px;}}
