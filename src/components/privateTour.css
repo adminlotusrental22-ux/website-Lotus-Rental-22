@@ -63,3 +63,7 @@
 @media(max-width:650px){.tour-content .tour-car{padding:0!important;}.tour-car h2{font-size:22px;}.tour-car .tour-interior img{height:175px;max-height:none;}.tour-car .tour-interior{margin-top:12px;}}
 .tour-car .tour-interior img{border-radius:14px;}
 @media(max-width:650px){.tour-car .tour-interior img{border-radius:12px;}}
+.tour-floating-wa{position:fixed;right:24px;bottom:24px;z-index:9;display:flex;align-items:center;gap:9px;min-width:52px;min-height:52px;padding:0 17px;border-radius:28px;background:#174c43;color:#fff;text-decoration:none;box-shadow:0 4px 16px #173d4326;font-size:13px;font-weight:600;transition:background .2s,transform .2s}
+.tour-floating-wa:hover{background:#246a52;transform:translateY(-2px)}.tour-floating-wa:focus-visible{outline:3px solid #d3b86c;outline-offset:4px}
+@media(max-width:650px){.tour-floating-wa{right:16px;bottom:calc(90px + env(safe-area-inset-bottom));width:50px;height:50px;padding:0;justify-content:center;min-width:50px;min-height:50px}.tour-floating-wa span{display:none}}
+@media(prefers-reduced-motion:reduce){.tour-floating-wa{transition:none}}

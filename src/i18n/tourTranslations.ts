@@ -146,3 +146,6 @@ export function tourMessage(text:string,language:string){
 }
 
 tourTranslations['Sunset atmosphere reference · venue access is not included.']=['Referensi suasana sunset · akses venue tidak termasuk.','日落氛围参考，场地入场不包含。','Referencia del ambiente al atardecer; acceso al lugar no incluido.','Immagine di atmosfera al tramonto; accesso al luogo non incluso.'];
+
+tourTranslations['Ask our tour team on WhatsApp']=['Tanya tim tur via WhatsApp','通过WhatsApp咨询旅游团队','Consulta al equipo por WhatsApp','Chiedi al team su WhatsApp'];
+tourTranslations['Ask us']=['Tanya kami','咨询我们','Consúltanos','Contattaci'];
