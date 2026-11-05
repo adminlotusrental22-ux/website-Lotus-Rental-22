@@ -1,3 +1,4 @@
+import {tourTranslate} from './tourTranslations';
 import { translateEuropean, europeanMessage } from './europeanTranslations';
 import { translations } from './translations';
 export type Language = 'en' | 'id' | 'zh' | 'es' | 'it';
@@ -6,6 +7,7 @@ export function getLanguage(): Language {
 }
 export function translate(text:string, language:Language):string {
   if(language==='en')return text;
+  const tour=tourTranslate(text,language);if(tour!==text)return tour;
   const bookingLabels:Record<string,string[]>={
     'Return to Lotus garage':['Kembali ke garasi Lotus','归还至Lotus车库','Devolver en el garaje Lotus','Restituire al garage Lotus'],
     'Another location in Labuan Bajo':['Lokasi lain di Labuan Bajo','拉布安巴焦其他地点','Otro lugar en Labuan Bajo','Altro luogo a Labuan Bajo'],
