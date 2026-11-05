@@ -673,3 +673,5 @@ html[lang='zh-CN'] .eyebrow { letter-spacing:1px; }
 .rental-policies a,.booking-policy-note a {color:#174c43;text-decoration:underline;text-underline-offset:3px;}
 .policy-footer-links {display:flex;gap:24px;flex-wrap:wrap;padding-top:22px;font-size:13px;}
 .booking-policy-note {background:#f2f5ee;border-radius:10px;padding:12px;}
+
+.tour-entry{display:none;font-size:11px;color:#174c43;text-decoration:none;white-space:nowrap}@media(max-width:1023px){.tour-entry{display:block}}
