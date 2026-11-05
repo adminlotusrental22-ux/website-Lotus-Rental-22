@@ -53,3 +53,11 @@
 .tour-car .tour-interior img{max-height:270px;}
 .tour-car .tour-interior figcaption{margin-top:7px;font-size:11px;}
 @media(max-width:650px){.tour-content .tour-car{padding:16px!important;}.tour-car .tour-interior{margin-top:14px;}.tour-car .tour-interior img{max-height:200px;}}
+/* Flat, compact vehicle section: copy above a full-width image. */
+.tour-content .tour-car{padding:0!important;background:transparent;border-radius:0;margin-bottom:26px;}
+.tour-car h2{font-size:23px;margin:7px 0 9px;}
+.tour-car p{font-size:14px;line-height:1.65;margin:0 0 9px;}
+.tour-car .tour-interior{max-width:none;width:100%;margin:14px 0 0;}
+.tour-car .tour-interior img{display:block;width:100%;height:210px;max-height:none;object-fit:cover;object-position:center 64%;border-radius:0;background:transparent;}
+.tour-car .tour-interior figcaption{margin-top:6px;font-size:10px;}
+@media(max-width:650px){.tour-content .tour-car{padding:0!important;}.tour-car h2{font-size:22px;}.tour-car .tour-interior img{height:175px;max-height:none;}.tour-car .tour-interior{margin-top:12px;}}
