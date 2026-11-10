@@ -10,7 +10,8 @@ import {getLanguage} from '../i18n/language';
 import {tourMessage} from '../i18n/tourTranslations';
 
 const photos=['/assets/labuan-bajo-city-sunset-enhanced.jpg','/assets/routes/bukit-cinta.jpg','/assets/routes/golo-mori.jpg','/assets/routes/gua-rangko.jpg'];
-const itineraryPhotos=['/assets/tours/itinerary/airport-pickup.jpg', '/assets/tours/itinerary/batu-cermin.jpg', '/assets/tours/itinerary/bukit-cinta-sylvia.jpg', '/assets/tours/itinerary/coastal-lunch.jpg', '/assets/tours/itinerary/flores-crafts.jpg', '/assets/tours/itinerary/melo-village.jpg', '/assets/tours/itinerary/harbour-sunset.jpg', '/assets/tours/itinerary/night-market-dinner.jpg'];
+const itineraryPhotos=['airport-pickup','batu-cermin','bukit-cinta-sylvia','coastal-lunch','flores-crafts','melo-village','harbour-sunset','night-market-dinner'];
+const itineraryPhotoSizes='(max-width: 650px) 100vw, (max-width: 860px) calc(52.4vw - 21px), 430px';
 const stops=[
   ['08:30','Your day starts at your door','Hotel or Komodo Airport pickup. Meet your driver/guide and settle into your private, air-conditioned Toyota Rush.'],
   ['09:00–10:30','Gua Batu Cermin','Explore the limestone formations and ancient sea fossils of Mirror Stone Cave. Entrance tickets are paid separately.'],
@@ -58,6 +59,11 @@ function TourStopDialog({index,onClose}:{index:number;onClose:()=>void}){
  const [closing,setClosing]=useState(false);
  useEffect(()=>{if(!closing)return;const timer=setTimeout(onClose,window.matchMedia('(prefers-reduced-motion: reduce)').matches?0:180);return()=>clearTimeout(timer);},[closing,onClose]);
  const [time,title,description]=stops[index];
- const image=itineraryPhotos[index];
- return <Dialog title={title} onClose={()=>setClosing(true)} className={'tour-stop-dialog'+(closing?' is-closing':'')}><div className={'tour-popup-body'+(image?' has-photo':'')}>{image&&<img src={image} alt={title}/>}<div className="tour-popup-copy"><span className="tour-popup-time"><Clock size={15}/>{time} WITA</span><p>{description}</p>{index===6&&<small className="tour-popup-disclaimer">Sunset atmosphere reference · venue access is not included.</small>}<span className="tour-popup-note"><MapPin size={15}/>Labuan Bajo · Private tour</span></div></div></Dialog>;
+ const photo=`/assets/tours/itinerary/${itineraryPhotos[index]}`;
+ return <Dialog title={title} onClose={()=>setClosing(true)} className={'tour-stop-dialog'+(closing?' is-closing':'')}>
+   <div className="tour-popup-body has-photo">
+     <img src={`${photo}-480.webp`} srcSet={`${photo}-480.webp 480w, ${photo}-960.webp 960w`} sizes={itineraryPhotoSizes} decoding="async" alt={title}/>
+     <div className="tour-popup-copy"><span className="tour-popup-time"><Clock size={15}/>{time} WITA</span><p>{description}</p>{index===6&&<small className="tour-popup-disclaimer">Sunset atmosphere reference · venue access is not included.</small>}<span className="tour-popup-note"><MapPin size={15}/>Labuan Bajo · Private tour</span></div>
+   </div>
+ </Dialog>;
 }
