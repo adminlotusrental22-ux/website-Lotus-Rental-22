@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { Bike, MapPin, Compass, MessageCircle } from 'lucide-react';
-import { WHATSAPP_CHAT_URL } from '../data/businessData';
+import { Bike, MapPin, Compass, ClipboardList } from 'lucide-react';
 export const StickyMobileBar = () => {
   const [active, setActive] = useState('scooters');
   useEffect(() => {
     const observer = new IntersectionObserver(entries => { const visible = entries.filter(e => e.isIntersecting).sort((a,b) => b.intersectionRatio-a.intersectionRatio)[0]; if (visible) setActive(visible.target.id); }, { rootMargin: '-10% 0px -40% 0px', threshold: [0, .1, .5] });
-    ['scooters','delivery','routes'].forEach(id => { const element = document.getElementById(id); if(element) observer.observe(element); });
+    ['scooters','delivery','routes','rental-policies'].forEach(id => { const element = document.getElementById(id); if(element) observer.observe(element); });
     return () => observer.disconnect();
   }, []);
-  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}<a className="mobile-chat" href={WHATSAPP_CHAT_URL} target="_blank" rel="noreferrer"><span className="mobile-chat-icon" aria-hidden="true"><MessageCircle size={20}/></span><span>Chat with us</span></a></nav>;
+  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass },{ id:'rental-policies', label:'Rental essentials', Icon:ClipboardList }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}</nav>;
 };

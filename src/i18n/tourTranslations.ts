@@ -149,3 +149,5 @@ tourTranslations['Sunset atmosphere reference · venue access is not included.']
 
 tourTranslations['Ask our tour team on WhatsApp']=['Tanya tim tur via WhatsApp','通过WhatsApp咨询旅游团队','Consulta al equipo por WhatsApp','Chiedi al team su WhatsApp'];
 tourTranslations['Ask us']=['Tanya kami','咨询我们','Consúltanos','Contattaci'];
+tourTranslations['Direct booking']=['Booking langsung','直接预订','Reserva directa','Prenota direttamente'];
+tourTranslations['Ask about scooter rental on WhatsApp']=['Tanya sewa motor via WhatsApp','通过WhatsApp咨询摩托车租赁','Consulta el alquiler por WhatsApp','Chiedi del noleggio su WhatsApp'];

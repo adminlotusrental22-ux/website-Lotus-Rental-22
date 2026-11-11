@@ -10,7 +10,8 @@ import { BookingModal } from './components/BookingModal';
 import { StickyMobileBar } from './components/StickyMobileBar';
 import { TripGuide } from './components/TripGuide';
 import { GarageLocationSection } from './components/GarageLocationSection';
-import { BUSINESS_INFO } from './data/businessData';
+import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { WHATSAPP_CHAT_URL, BUSINESS_INFO } from './data/businessData';
 import { resolveScooterId } from './lib/booking';
 export default function App() {
   useEffect(() => {
@@ -38,7 +39,7 @@ export default function App() {
       <DeliverySection /><GarageLocationSection /><TripGuide onBook={openBooking} />
     </main>
     <footer className="site-footer"><div className="page-width policy-footer-links"><a href="#rental-terms" onClick={()=>{const el=document.getElementById("rental-terms") as HTMLDetailsElement;if(el)el.open=true;}}>Rental terms</a><a href="#privacy-policy" onClick={()=>{const el=document.getElementById("privacy-policy") as HTMLDetailsElement;if(el)el.open=true;}}>Privacy &amp; verification</a></div><div className="page-width footer-inner"><div><a href="#home" className="footer-brand" aria-label="Lotus Rental 22 home"><LotusLogoCrest size="lg" showTextLabel={false}/><strong>LOTUS RENTAL 22</strong></a><p>Local wheels. More of Bajo.</p><details className="footer-coming-soon"><summary>More from Lotus · coming soon</summary><p>Private car + driver · Komodo speedboat tours · City & sunset trips · Airport VIP transfers</p></details></div><div><a href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}`} target="_blank" rel="noreferrer">{BUSINESS_INFO.phoneDisplay}</a><a href={`mailto:${BUSINESS_INFO.email}`}>{BUSINESS_INFO.email}</a></div><div><p className="footer-address"><strong>Address</strong><br/>{BUSINESS_INFO.address}<br/>{BUSINESS_INFO.fullAddress}</p><a href={BUSINESS_INFO.googleMapsUrl} target="_blank" rel="noreferrer">Visit our garage · Google Maps ↗</a><a href="https://www.instagram.com/lotus_rental22/" target="_blank" rel="noreferrer">Instagram · @lotus_rental22</a><p>Daily · 08:00–19:00 WITA · Cash / QRIS</p></div></div></footer>
-    <StickyMobileBar />
+    <StickyMobileBar /><FloatingWhatsApp href={WHATSAPP_CHAT_URL} label="Ask about scooter rental on WhatsApp" />
     <BookingModal isOpen={bookingOpen} onClose={() => setBookingOpen(false)} preselectedScooterId={scooterId} currentCurrency={currency} />
   </div>;
 }
