@@ -29,6 +29,9 @@ Please confirm availability and the total price. Thank you!`;
 
 export const WHATSAPP_BOOKING_URL = `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(WHATSAPP_BOOKING_MESSAGE)}`;
 
+export const WHATSAPP_CHAT_MESSAGE = "Hi Lotus Rental 22! I'm interested in renting a scooter in Labuan Bajo. Could you help me with availability and rental details?";
+export const WHATSAPP_CHAT_URL = `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(WHATSAPP_CHAT_MESSAGE)}`;
+
 export const formatPrice = (amountIdr: number, _currency: Currency = 'IDR'): string => {
   return `Rp ${amountIdr.toLocaleString('id-ID')}`;
 };

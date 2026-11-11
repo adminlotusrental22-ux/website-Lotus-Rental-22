@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Bike, MapPin, Compass, MessageCircle } from 'lucide-react';
-import { BUSINESS_INFO } from '../data/businessData';
+import { WHATSAPP_CHAT_URL } from '../data/businessData';
 export const StickyMobileBar = () => {
   const [active, setActive] = useState('scooters');
   useEffect(() => {
@@ -8,5 +8,5 @@ export const StickyMobileBar = () => {
     ['scooters','delivery','routes'].forEach(id => { const element = document.getElementById(id); if(element) observer.observe(element); });
     return () => observer.disconnect();
   }, []);
-  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}<a href={`https://wa.me/${BUSINESS_INFO.whatsappNumber}`} target="_blank" rel="noreferrer"><MessageCircle size={20}/><span>Chat with us</span></a></nav>;
+  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}<a className="mobile-chat" href={WHATSAPP_CHAT_URL} target="_blank" rel="noreferrer"><span className="mobile-chat-icon" aria-hidden="true"><MessageCircle size={20}/></span><span>Chat with us</span></a></nav>;
 };
