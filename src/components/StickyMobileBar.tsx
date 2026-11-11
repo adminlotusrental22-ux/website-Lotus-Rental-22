@@ -7,5 +7,5 @@ export const StickyMobileBar = () => {
     ['scooters','delivery','routes','rental-policies'].forEach(id => { const element = document.getElementById(id); if(element) observer.observe(element); });
     return () => observer.disconnect();
   }, []);
-  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass },{ id:'rental-policies', label:'Rental essentials', Icon:ClipboardList }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}</nav>;
+  return <nav className="mobile-nav" aria-label="Quick navigation">{[{ id:'scooters', label:'Scooters', Icon:Bike },{ id:'delivery', label:'Delivery', Icon:MapPin },{ id:'routes', label:'Explore', Icon:Compass },{ id:'rental-policies', label:'FAQ', Icon:ClipboardList }].map(({id,label,Icon}) => <a key={id} href={`#${id}`} onClick={() => setActive(id)} className={active===id?'active':''} aria-current={active===id?'location':undefined}><Icon size={20}/><span>{label}</span></a>)}</nav>;
 };
