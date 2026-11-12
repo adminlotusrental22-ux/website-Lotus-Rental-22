@@ -26,9 +26,8 @@ export function getBookingSchedule(now = new Date()) {
   };
 }
 export function isPickupTimeValid(date: string, time: string, now = Date.now()) {
-  const hour = Number(time.slice(0, 2));
-  const timestamp = new Date(date + 'T' + time + ':00+08:00').getTime();
-  return hour >= 8 && hour <= 19 && Number.isFinite(timestamp) && timestamp >= now + 3600000;
+  try { return time >= '08:00' && time <= '19:00' && witaTimestamp(date,time) >= now + 3600000; }
+  catch { return false; }
 }
 export function calculateBookingTotals(ids: string[], days: number, location: string) {
   if (!ids.length || !Number.isInteger(days) || days < 1) throw new Error('Invalid rental selection');
@@ -40,15 +39,48 @@ export function calculateBookingTotals(ids: string[], days: number, location: st
   const delivery = location === 'pickup' ? 0 : ids.length * 20000;
   return { subtotal, delivery, total: subtotal + delivery };
 }
+
+function witaTimestamp(date: string, time: string) {
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date) || !/^([01]\d|2[0-3]):[0-5]\d$/.test(time)) throw new Error('Choose valid pickup and return dates and times.');
+  const day = new Date(date + 'T00:00:00Z');
+  if (!Number.isFinite(day.getTime()) || day.toISOString().slice(0, 10) !== date) throw new Error('Choose valid pickup and return dates and times.');
+  return new Date(`${date}T${time}:00+08:00`).getTime();
+}
+
+export function calculateRentalPeriod(date: string, time: string, returnDate: string, returnTime: string) {
+  const minutes = (witaTimestamp(returnDate, returnTime) - witaTimestamp(date, time)) / 60000;
+  if (minutes <= 0) throw new Error('Return must be after pickup.');
+  const fullDays = Math.floor(minutes / 1440);
+  const extraMinutes = fullDays > 0 ? minutes % 1440 : 0;
+  const baseDays = Math.max(1, fullDays);
+  const extraDay = extraMinutes > 240;
+  return { minutes, baseDays, extraMinutes, extraDay, billedDays: baseDays + Number(extraDay), overtimeHours: extraDay ? 0 : Math.ceil(extraMinutes / 60) };
+}
+
+export function calculateScheduledBookingTotals(ids: string[], location: string, date: string, time: string, returnDate: string, returnTime: string) {
+  const period = calculateRentalPeriod(date, time, returnDate, returnTime);
+  const { subtotal, delivery } = calculateBookingTotals(ids, period.billedDays, location);
+  const overtime = period.overtimeHours * 15000 * ids.length;
+  return { ...period, subtotal, overtime, delivery, total: subtotal + overtime + delivery };
+}
+
+export function isReturnAfterHours(time: string) { return time > '19:00'; }
+export function isReturnTimeValid(time: string) { return /^([01]\d|2[0-3]):[0-5]\d$/.test(time) && time >= '08:00' && time <= '21:00'; }
+
 export function buildBookingWhatsAppUrl(order: {
   units: string[]; date: string; time: string; days: number; location: string;
-  details: string; name: string; returnLocation: string;
+  details: string; name: string; returnLocation: string; returnDate?: string; returnTime?: string; hotelHandover?: boolean;
 }, language: Language = getLanguage()) {
   const { units, date, time, days, location, details, name, returnLocation } = order;
-  const { subtotal, delivery, total } = calculateBookingTotals(units, days, location);
+  const returnDate = order.returnDate || nextDay(date, days);
+  const returnTime = order.returnTime || time;
+  if (!isReturnTimeValid(returnTime)) throw new Error('Returns are available from 08:00 to 21:00 WITA.');
+  if (isReturnAfterHours(returnTime) && returnLocation !== 'garage' && !order.hotelHandover) throw new Error('After 19:00, choose garage return or request a hotel handover.');
+  const totals = calculateScheduledBookingTotals(units, location, date, time, returnDate, returnTime);
   if (returnLocation.trim() && /^(ya|yes|iya|no|tidak|ok|okay)$/i.test(returnLocation.trim())) {
     throw new Error('Please enter a return location, not a yes/no answer.');
   }
-  const message = formatBookingMessage({ ...order, returnDate: nextDay(date, days), subtotal, delivery, total }, language);
+  if (order.hotelHandover && !returnLocation.trim()) throw new Error('Please enter the hotel name or full return address.');
+  const message = formatBookingMessage({ ...order, returnDate, returnTime, days: totals.billedDays, ...totals }, language);
   return `https://wa.me/${BUSINESS_INFO.whatsappNumber}?text=${encodeURIComponent(message)}`;
 }
