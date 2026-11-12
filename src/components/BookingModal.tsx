@@ -1,3 +1,4 @@
+import { BookingTimeSelect } from './BookingTimeSelect';
 import { BookingPolicyNotice } from './RentalPolicies';
 import React, { useState } from 'react';
 import { ArrowUpRight, Plus, Trash2, Check } from 'lucide-react';
@@ -55,9 +56,9 @@ function BookingForm({ onClose, preselectedScooterId, currentCurrency }: Props) 
     <fieldset><legend>01 / Your scooters</legend>{units.map((id,i)=><div className="unit-row" key={i}><label><span className="sr-only">Scooter {i+1}</span><select value={id} onChange={e=>setUnits(units.map((v,j)=>j===i?e.target.value:v))}>{SCOOTER_FLEET.map(s=><option key={s.id} value={s.id}>{s.name} · {formatPrice(s.dailyRateIdr,currentCurrency)}/day</option>)}</select></label>{units.length>1&&<button className="icon-button" type="button" onClick={()=>setUnits(units.filter((_,j)=>j!==i))} aria-label={`Remove scooter ${i+1}`}><Trash2 size={17}/></button>}</div>)}<button type="button" className="text-link add-unit" onClick={()=>setUnits([...units,SCOOTER_FLEET[0].id])}><Plus size={15}/> Add another scooter</button></fieldset>
     <fieldset><legend>02 / Your dates</legend><div className="form-grid">
       <label>Pickup date<input required aria-label="Pickup date" type="date" value={date} min={firstDate} onInput={e=>changeDate(e.currentTarget.value)} onChange={e=>changeDate(e.target.value)}/></label>
-      <label>Pickup time · WITA<select aria-label="Pickup time · WITA" value={time} onChange={e=>changeTime(e.target.value)}>{Array.from({length:12},(_,i)=>i+8).map(h=><option key={h} value={String(h).padStart(2,'0')+':00'} disabled={date===now.date&&h<earliestHour}>{String(h).padStart(2,'0')}:00</option>)}</select></label>
+      <BookingTimeSelect label="Pickup time · WITA" value={time} lastHour={19} onChange={changeTime} isDisabled={value=>!isPickupTimeValid(date,value)}/>
       <label>Return date<input required aria-label="Return date" type="date" value={returnDate} min={date} onInput={e=>setReturnDate(e.currentTarget.value)} onChange={e=>setReturnDate(e.target.value)}/></label>
-      <label>Return time · WITA<input required aria-label="Return time · WITA" type="time" min="08:00" max="21:00" step="60" value={returnTime} onInput={e=>changeReturnTime(e.currentTarget.value)} onChange={e=>changeReturnTime(e.target.value)}/></label>
+      <BookingTimeSelect label="Return time · WITA" value={returnTime} lastHour={21} onChange={changeReturnTime}/>
     </div><p className="rental-time-summary"><span>Charged rental days</span>: <strong>{quote?.billedDays ?? '—'}</strong>{!!quote?.overtimeHours&&<> · <span>Extra hours</span>: <strong>{quote.overtimeHours}</strong></>}</p>
     <p className="rental-time-help">Minimum 1 day. Up to 4 extra hours: Rp 15,000 per started hour per scooter. Over 4 extra hours: one full day instead of hourly charges.</p>
     {quote?.extraDay&&<p className="return-arrangement-note">Extra time exceeds 4 hours. One extra rental day is included in the estimate; no hourly charge.</p>}
