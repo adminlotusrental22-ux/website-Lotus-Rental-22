@@ -2,7 +2,7 @@ export const tourTranslations:Record<string,string[]> = {};
 const rows=`
 A day in Bajo.|Sehari di Bajo.|巴焦一日。|Un día en Bajo.|Un giorno a Bajo.
 Entirely yours.|Sesuai caramu.|随心而行。|A tu manera.|Tutto per te.
-LABUAN BAJO · PRIVATE CAR & LOCAL DRIVER/GUIDE|LABUAN BAJO · MOBIL PRIVAT & DRIVER/PEMANDU LOKAL|拉布安巴焦 · 专车与当地司机兼向导|LABUAN BAJO · COCHE PRIVADO Y CONDUCTOR/GUÍA LOCAL|LABUAN BAJO · AUTO PRIVATA E AUTISTA/GUIDA LOCALE
+LABUAN BAJO CITY TOUR · LOCAL DRIVER/GUIDE|CITY TOUR LABUAN BAJO · DRIVER/PEMANDU LOKAL|拉布安巴焦城市游 · 当地司机兼向导|TOUR POR LABUAN BAJO · CONDUCTOR/GUÍA LOCAL|TOUR DI LABUAN BAJO · AUTISTA/GUIDA LOCALE
 Coastal roads, local stories and a sunset worth slowing down for.|Jalan pesisir, cerita lokal, dan senja yang layak dinikmati perlahan.|沿海风光、当地故事和悠闲日落。|Costa, historias locales y un atardecer para disfrutar sin prisa.|Costa, storie locali e un tramonto da assaporare.
 Your own Toyota Rush. Your own pace.|Toyota Rush privat. Nikmati sesuai ritmemu.|专属Toyota Rush，自定节奏。|Tu propio Toyota Rush. A tu ritmo.|Il tuo Toyota Rush. Al tuo ritmo.
 1–6 guests|1–6 tamu|1–6位客人|1–6 huéspedes|1–6 ospiti
@@ -12,7 +12,7 @@ Plan your day|Rencanakan harimu|安排一日游|Planifica tu día|Organizza la g
 Scooter rental|Sewa motor|租摩托车|Alquiler de scooter|Noleggio scooter
 See Bajo, your way ↗|Jelajahi Bajo, caramu ↗|随心探索巴焦 ↗|Descubre Bajo a tu manera ↗|Scopri Bajo a modo tuo ↗
 One car. A whole day of possibilities.|Satu mobil. Banyak cerita dalam sehari.|一辆专车，满载精彩。|Un coche. Un día de posibilidades.|Un’auto. Una giornata di possibilità.
-Skip the group schedule. Explore Labuan Bajo with a local driver/guide, a comfortable air-conditioned car, and room to make the day your own.|Tanpa jadwal rombongan. Jelajahi Labuan Bajo bersama driver/pemandu lokal dengan mobil ber-AC dan rute yang bisa disesuaikan.|无需跟团，与当地司机兼向导乘坐舒适空调专车，按自己的节奏探索。|Olvida los horarios de grupo. Explora con conductor/guía local, coche con aire acondicionado y un día a tu medida.|Dimentica gli orari dei gruppi. Esplora con autista/guida locale, auto climatizzata e una giornata su misura.
+Explore Labuan Bajo on a city tour with a local driver/guide, an air-conditioned Toyota Rush, and room to make the day your own.|Jelajahi Labuan Bajo lewat city tour bersama driver/pemandu lokal, Toyota Rush ber-AC, dan rute yang bisa disesuaikan.|乘坐空调Toyota Rush，与当地司机兼向导按自己的节奏探索拉布安巴焦城市风光。|Explora Labuan Bajo en un tour por la ciudad con conductor/guía local, Toyota Rush con aire acondicionado y un día a tu medida.|Esplora Labuan Bajo con un tour della città, autista/guida locale, Toyota Rush climatizzata e una giornata su misura.
 Private vehicle · air conditioning · local driver/guide|Mobil privat · AC · driver/pemandu lokal|专车 · 空调 · 当地司机兼向导|Coche privado · aire acondicionado · conductor/guía local|Auto privata · aria condizionata · autista/guida locale
 Included in your day|Termasuk dalam paket|费用包含|Incluido|Incluso
 Paid separately|Dibayar terpisah|另行付费|Se paga aparte|Da pagare a parte
@@ -44,7 +44,7 @@ Air conditioning, your own driver/guide, and no need to navigate. Let us know yo
 Toyota Rush · up to 6 guests|Toyota Rush · hingga 6 tamu|Toyota Rush · 最多6位客人|Toyota Rush · hasta 6 huéspedes|Toyota Rush · fino a 6 ospiti
 Interior layout reference · actual trim may vary.|Referensi tata ruang interior · detail unit bisa berbeda.|内饰布局参考 · 实际配置可能不同。|Interior de referencia · el acabado puede variar.|Interni di riferimento · allestimento variabile.
 A few good questions.|Pertanyaan umum.|常见问题。|Preguntas frecuentes.|Domande frequenti.
-PRIVATE. SIMPLE. ALL YOURS.|PRIVAT. PRAKTIS. UNTUKMU.|专属，简单，随心。|PRIVADO. SENCILLO. PARA TI.|PRIVATO. SEMPLICE. PER TE.
+YOUR CITY TOUR. YOUR OWN PACE.|CITY TOUR SESUAI RITMEMU.|城市游，随心节奏。|TU TOUR POR LA CIUDAD, A TU RITMO.|IL TUO TOUR DELLA CITTÀ, AL TUO RITMO.
 / car / day|/ mobil / hari|/ 车 / 天|/ coche / día|/ auto / giorno
 For your group, not per person.|Untuk rombonganmu, bukan per orang.|整车价格，非每人。|Para tu grupo, no por persona.|Per il gruppo, non a persona.
 Tour date|Tanggal tur|出游日期|Fecha del tour|Data del tour
@@ -64,7 +64,7 @@ Hotel name or flight details|Nama hotel atau detail penerbangan|酒店名称或�
 Add your name or special requests|Tambahkan nama atau permintaan khusus|添加姓名或特别要求|Añade tu nombre o peticiones|Aggiungi nome o richieste
 Your name|Nama Anda|您的姓名|Tu nombre|Il tuo nome
 Route, luggage or requests|Rute, bagasi, atau permintaan|路线、行李或要求|Ruta, equipaje o peticiones|Percorso, bagagli o richieste
-Private car, driver/guide & fuel|Mobil privat, driver/pemandu & BBM|专车、司机兼向导与燃油|Coche privado, conductor/guía y combustible|Auto privata, autista/guida e carburante
+City tour, driver/guide & fuel|City tour, driver/pemandu & BBM|城市游、司机兼向导与燃油|Tour por la ciudad, conductor/guía y combustible|Tour della città, autista/guida e carburante
 Local pickup & return|Jemput & antar lokal|当地接送|Recogida y regreso local|Ritiro e rientro locale
 Included|Termasuk|包含|Incluido|Incluso
 Check my date|Cek tanggal saya|查询日期|Consultar mi fecha|Verifica la data
@@ -109,7 +109,7 @@ With 5–6 guests, the third row can feel snug and luggage space is limited. Tel
 `;
 for(const row of details.trim().split('\n')){const [key,...values]=row.split('|');tourTranslations[key]=values;}
 const messageRows=`
-PRIVATE TOUR REQUEST|PERMINTAAN TUR PRIVAT|私人游申请|SOLICITUD DE TOUR PRIVADO|RICHIESTA TOUR PRIVATO
+CITY TOUR REQUEST|PERMINTAAN CITY TOUR|城市游申请|SOLICITUD DE TOUR POR LA CIUDAD|RICHIESTA TOUR DELLA CITTÀ
 Name:|Nama:|姓名：|Nombre:|Nome:
 Date:|Tanggal:|日期：|Fecha:|Data:
 Start:|Mulai:|出发：|Inicio:|Partenza:
@@ -119,7 +119,7 @@ Vehicle:|Mobil:|车辆：|Vehículo:|Veicolo:
 Pickup:|Penjemputan:|接车：|Recogida:|Ritiro:
 Route / luggage / requests:|Rute / bagasi / permintaan:|路线/行李/要求：|Ruta / equipaje / peticiones:|Percorso / bagagli / richieste:
 private car + driver/guide|mobil privat + driver/pemandu|专车与司机兼向导|coche privado y conductor/guía|auto privata e autista/guida
-Car charter:|Sewa mobil:|包车：|Coche privado:|Auto privata:
+City tour:|Tur kota:|城市游：|Tour por la ciudad:|Tour della città:
 / car / day|/ mobil / hari|/车/天|/ coche / día|/ auto / giorno
 Includes driver/guide, fuel, local hotel / LBJ airport transfers and bottled water.|Termasuk driver/pemandu, BBM, jemput-antar hotel/bandara LBJ lokal dan air mineral.|含司机兼向导、燃油、当地酒店/机场接送与瓶装水。|Incluye conductor/guía, combustible, traslados locales hotel/aeropuerto LBJ y agua.|Include autista/guida, carburante, trasferimenti locali hotel/aeroporto LBJ e acqua.
 Separate: attraction tickets, meals, optional activities, tips and personal insurance.|Terpisah: tiket, makan, aktivitas opsional, tip dan asuransi pribadi.|另付：门票、餐费、自选活动、小费与个人保险。|Aparte: entradas, comidas, actividades opcionales, propinas y seguro personal.|Separati: ingressi, pasti, attività opzionali, mance e assicurazione personale.
@@ -129,8 +129,8 @@ Additional car requested: please quote separately.|Minta mobil tambahan: mohon p
 Please confirm availability, itinerary, luggage space, payment and cancellation terms, and the final total. Thank you!|Mohon konfirmasi ketersediaan, itinerary, ruang bagasi, pembayaran, pembatalan, dan total akhir. Terima kasih!|请确认供应、行程、行李空间、付款取消条款及最终总价，谢谢！|Confirmen disponibilidad, itinerario, equipaje, pago, cancelación y total. ¡Gracias!|Confermate disponibilità, itinerario, bagagli, pagamento, cancellazione e totale. Grazie!
 guest|tamu|位客人|huésped|ospite
 guests|tamu|位客人|huéspedes|ospiti
-Private tour|Tur privat|私人游|Tour privado|Tour privato
-Private tour ↗|Tur privat ↗|私人游 ↗|Tour privado ↗|Tour privato ↗
+City tour|Tur kota|城市游|Tour por la ciudad|Tour della città
+City tour ↗|Tur kota ↗|城市游 ↗|Tour por la ciudad ↗|Tour della città ↗
 `;
 for(const row of messageRows.trim().split('\n')){const [key,...values]=row.split('|');tourTranslations[key]=values;}
 export function tourMessage(text:string,language:string){
@@ -140,19 +140,19 @@ export function tourMessage(text:string,language:string){
    const colon=line.indexOf(':');
    if(colon>=0){const prefix=line.slice(0,colon+1);if(tourTranslations[prefix])return tourTranslations[prefix][i]+line.slice(colon+1);}
    let value=tourTranslate(line,language);
-   for(const key of ['PRIVATE TOUR REQUEST','private car + driver/guide','Car charter:','/ car / day'])value=value.split(key).join(tourTranslations[key][i]);
+   for(const key of ['CITY TOUR REQUEST','private car + driver/guide','City tour:','/ car / day'])value=value.split(key).join(tourTranslations[key][i]);
    return value;
  }).join('\n');
 }
 
 tourTranslations['Sunset atmosphere reference · venue access is not included.']=['Referensi suasana sunset · akses venue tidak termasuk.','日落氛围参考，场地入场不包含。','Referencia del ambiente al atardecer; acceso al lugar no incluido.','Immagine di atmosfera al tramonto; accesso al luogo non incluso.'];
 
-tourTranslations['Ask our tour team on WhatsApp']=['Tanya tim tur via WhatsApp','通过WhatsApp咨询旅游团队','Consulta al equipo por WhatsApp','Chiedi al team su WhatsApp'];
+tourTranslations['Ask our city tour team on WhatsApp']=['Tanya tim tur via WhatsApp','通过WhatsApp咨询旅游团队','Consulta al equipo por WhatsApp','Chiedi al team su WhatsApp'];
 tourTranslations['Ask us']=['Tanya kami','咨询我们','Consúltanos','Contattaci'];
 tourTranslations['Direct booking']=['Booking langsung','直接预订','Reserva directa','Prenota direttamente'];
 tourTranslations['Ask about scooter rental on WhatsApp']=['Tanya sewa motor via WhatsApp','通过WhatsApp咨询摩托车租赁','Consulta el alquiler por WhatsApp','Chiedi del noleggio su WhatsApp'];
 
-tourTranslations["Book tour"]=["Booking tur", "预订旅游", "Reservar tour", "Prenota tour"];
+tourTranslations["Book city tour"]=["Booking city tour", "预订城市游", "Reservar tour por la ciudad", "Prenota tour della città"];
 tourTranslations["In collaboration with"]=["Berkolaborasi dengan", "合作伙伴", "En colaboración con", "In collaborazione con"];
 tourTranslations["Pickup time · WITA"]=["Jam pengambilan · WITA", "取车时间 · WITA", "Hora de recogida · WITA", "Ora di ritiro · WITA"];
 tourTranslations["Return date"]=["Tanggal pengembalian", "还车日期", "Fecha de devolución", "Data di restituzione"];
@@ -172,3 +172,4 @@ tourTranslations["Request hotel handover"]=["Ajukan serah terima di hotel", "申
 tourTranslations["Return must be after pickup."]=["Pengembalian harus setelah pengambilan.", "还车须晚于取车。", "La devolución debe ser posterior a la recogida.", "La restituzione deve essere successiva al ritiro."];
 tourTranslations["Returns are available from 08:00 to 21:00 WITA."]=["Pengembalian tersedia pukul 08:00–21:00 WITA.", "还车时间为08:00–21:00 WITA。", "Devolución disponible de 08:00 a 21:00 WITA.", "Restituzioni disponibili dalle 08:00 alle 21:00 WITA."];
 tourTranslations["After 19:00, choose garage return or request a hotel handover."]=["Setelah 19:00, pilih kembali ke garasi atau ajukan serah terima hotel.", "19:00后请选择车库还车或申请酒店交接。", "Después de las 19:00, elige garaje o solicita entrega en hotel.", "Dopo le 19:00 scegli il garage o richiedi la consegna in hotel."];
+tourTranslations['Labuan Bajo · City tour']=['Labuan Bajo · Tur kota','拉布安巴焦 · 城市游','Labuan Bajo · Tour por la ciudad','Labuan Bajo · Tour della città'];

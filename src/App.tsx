@@ -1,4 +1,5 @@
-import { PrivateTourPage } from './components/PrivateTourPage';
+import { isCityTourRoute } from './lib/tourRouting';
+import { CityTourPage } from './components/CityTourPage';
 import React, { useEffect, useState } from 'react';
 import { Currency, ScooterCategory } from './types';
 import { LotusLogoCrest } from './components/LotusLogoCrest';
@@ -18,9 +19,9 @@ export default function App() {
     const id = window.location.hash.slice(1);
     if (id) document.getElementById(id)?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }, []);
-  const [privateTour,setPrivateTour]=useState(window.location.hash==='#private-tour'||window.location.hash.startsWith('#tour-'));
-  useEffect(()=>{const update=()=>{const hash=window.location.hash;setPrivateTour(hash==='#private-tour'||hash.startsWith('#tour-'));requestAnimationFrame(()=>{const el=document.getElementById(hash.slice(1));if(el instanceof HTMLDetailsElement)el.open=true;if(el)el.scrollIntoView({block:'start'});else window.scrollTo(0,0);});};window.addEventListener('hashchange',update);return()=>window.removeEventListener('hashchange',update);},[]);
-  useEffect(()=>{document.title=privateTour?'Private Labuan Bajo Tour · Toyota Rush | Lotus Rental 22':'Lotus Rental 22 — Premium Scooter Rental Labuan Bajo';},[privateTour]);
+  const [cityTour,setCityTour]=useState(()=>isCityTourRoute(window.location.hash));
+  useEffect(()=>{const update=()=>{const hash=window.location.hash;setCityTour(isCityTourRoute(hash));requestAnimationFrame(()=>{const el=document.getElementById(hash.slice(1));if(el instanceof HTMLDetailsElement)el.open=true;if(el)el.scrollIntoView({block:'start'});else window.scrollTo(0,0);});};window.addEventListener('hashchange',update);return()=>window.removeEventListener('hashchange',update);},[]);
+  useEffect(()=>{document.title=cityTour?'Labuan Bajo City Tour · Toyota Rush | Lotus Rental 22':'Lotus Rental 22 — Premium Scooter Rental Labuan Bajo';},[cityTour]);
   const currency: Currency = 'IDR';
   const [category, setCategory] = useState<ScooterCategory>('all');
   const [bookingOpen, setBookingOpen] = useState(false);
@@ -30,7 +31,7 @@ export default function App() {
     setScooterId(validId);
     setBookingOpen(true);
   };
-  if(privateTour)return <PrivateTourPage/>;
+  if(cityTour)return <CityTourPage/>;
   return <div className="app-shell">
     <a className="skip-link" href="#scooters">Skip to scooters</a>
     <Header onOpenBookingModal={openBooking} />
