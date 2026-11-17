@@ -800,3 +800,5 @@ html[lang='zh-CN'] .eyebrow { letter-spacing:1px; }
  .mobile-header-dropdown>a,.mobile-header-dropdown>button {display:flex;align-items:center;justify-content:space-between;gap:12px;min-height:48px;padding:10px 12px;border-radius:7px;font-size:14px;font-weight:600;text-align:left;}
  .mobile-header-dropdown>a:hover,.mobile-header-dropdown>button:hover {background:#edf3ea;}
 }
+
+@media(max-width:650px){.site-footer--tour{padding-bottom:calc(100px + env(safe-area-inset-bottom));}}
