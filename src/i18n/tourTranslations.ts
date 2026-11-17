@@ -173,3 +173,9 @@ tourTranslations["Return must be after pickup."]=["Pengembalian harus setelah pe
 tourTranslations["Returns are available from 08:00 to 21:00 WITA."]=["Pengembalian tersedia pukul 08:00–21:00 WITA.", "还车时间为08:00–21:00 WITA。", "Devolución disponible de 08:00 a 21:00 WITA.", "Restituzioni disponibili dalle 08:00 alle 21:00 WITA."];
 tourTranslations["After 19:00, choose garage return or request a hotel handover."]=["Setelah 19:00, pilih kembali ke garasi atau ajukan serah terima hotel.", "19:00后请选择车库还车或申请酒店交接。", "Después de las 19:00, elige garaje o solicita entrega en hotel.", "Dopo le 19:00 scegli il garage o richiedi la consegna in hotel."];
 tourTranslations['Labuan Bajo · City tour']=['Labuan Bajo · Tur kota','拉布安巴焦 · 城市游','Labuan Bajo · Tour por la ciudad','Labuan Bajo · Tour della città'];
+
+tourTranslations["City tour on Instagram"]=["City tour di Instagram", "Instagram城市游", "City tour en Instagram", "City tour su Instagram"];
+tourTranslations["Explore our city tour highlights on Instagram."]=["Lihat highlight city tour kami di Instagram.", "在Instagram查看我们的城市游精选。", "Explora nuestros destacados de city tour en Instagram.", "Scopri i nostri highlight del city tour su Instagram."];
+tourTranslations["City tour highlight 01"]=["Highlight city tour 01", "城市游精选01", "Destacado city tour 01", "Highlight city tour 01"];
+tourTranslations["City tour highlight 02"]=["Highlight city tour 02", "城市游精选02", "Destacado city tour 02", "Highlight city tour 02"];
+tourTranslations["View on Instagram"]=["Lihat di Instagram", "在Instagram查看", "Ver en Instagram", "Vedi su Instagram"];
