@@ -2,7 +2,7 @@
 
 Final assets: `public/assets/brand/lotus-flower.svg`, `public/icon-512.png`, and favicon/app-icon sizes in `public/`.
 
-Design: seven flat golden lotus petals (#D89F2D), symmetrical and transparent, without crest, scooter, circle or lettering. The website keeps the existing brand name alongside the mark.
+Design: seven shaded gold lotus petals with three golden water ripples, symmetrical and transparent, without crest, scooter, circle or lettering. The website keeps the existing brand name alongside the mark.
 
 References: the two owner-supplied lotus logo photographs from 18 November 2026.
 
