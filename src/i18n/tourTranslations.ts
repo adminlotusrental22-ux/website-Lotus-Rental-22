@@ -179,3 +179,7 @@ tourTranslations["Explore our city tour highlights on Instagram."]=["Lihat highl
 tourTranslations["City tour highlight 01"]=["Highlight city tour 01", "城市游精选01", "Destacado city tour 01", "Highlight city tour 01"];
 tourTranslations["City tour highlight 02"]=["Highlight city tour 02", "城市游精选02", "Destacado city tour 02", "Highlight city tour 02"];
 tourTranslations["View on Instagram"]=["Lihat di Instagram", "在Instagram查看", "Ver en Instagram", "Vedi su Instagram"];
+tourTranslations["Explore our city tour"]=["Jelajahi city tour kami", "探索我们的城市游", "Explora nuestro city tour", "Scopri il nostro city tour"];
+tourTranslations["A little inspiration for your day in Bajo. See the highlights on Instagram."]=["Inspirasi untuk harimu di Bajo. Lihat highlight-nya di Instagram.", "为您的巴焦之旅寻找灵感，在Instagram查看精选。", "Inspiración para tu día en Bajo. Mira los destacados en Instagram.", "Ispirazione per la tua giornata a Bajo. Guarda gli highlight su Instagram."];
+tourTranslations["Instagram highlights"]=["Highlight Instagram", "Instagram精选", "Destacados de Instagram", "Highlight di Instagram"];
+tourTranslations["View highlight"]=["Lihat highlight", "查看精选", "Ver destacado", "Vedi highlight"];
