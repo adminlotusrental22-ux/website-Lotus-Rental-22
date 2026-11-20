@@ -42,3 +42,7 @@ The compact header selector now includes ES (Español) and IT (Italiano), alongs
 ## Social previews
 Small post covers below the guest gallery link to the owner-selected Instagram/TikTok posts. They are static, lazy-loaded local images: no autoplay, embeds, external scripts, passwords or live feed integration. Maintain links and covers in src/data/socialMedia.ts and public/assets/social/. All six selected posts have local covers. A platform fallback is retained for future missing or failed images.
 
+
+## Domain dan pengelolaan
+Lihat [catatan domain dan pengelolaan](docs/DOMAIN_DAN_PENGELOLAAN.md) untuk alamat aktif, hubungan GitHub dan Cloudflare, perpanjangan Hostinger, dan langkah pemulihan.
+
